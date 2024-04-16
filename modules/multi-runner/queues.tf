@@ -26,7 +26,6 @@ data "aws_iam_policy_document" "deny_unsecure_transport" {
   }
 }
 
-
 resource "aws_sqs_queue" "queued_builds" {
   for_each                    = var.multi_runner_config
   name                        = "${var.prefix}-${each.key}-queued-builds${each.value.fifo ? ".fifo" : ""}"
