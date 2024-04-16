@@ -71,6 +71,12 @@ resource "aws_sqs_queue_policy" "build_queue_dlq_policy" {
   policy    = data.aws_iam_policy_document.deny_unsecure_transport.json
 }
 
+resource "aws_sqs_queue_policy" "webhook_events_workflow_job_queue_policy" {
+  count     = var.enable_workflow_job_events_queue ? 1 : 0
+  queue_url = aws_sqs_queue.webhook_events_workflow_job_queue[0].id
+  policy    = data.aws_iam_policy_document.deny_unsecure_transport.json
+}
+
 resource "aws_sqs_queue" "webhook_events_workflow_job_queue" {
   count                       = var.enable_workflow_job_events_queue ? 1 : 0
   name                        = "${var.prefix}-webhook_events_workflow_job_queue"
