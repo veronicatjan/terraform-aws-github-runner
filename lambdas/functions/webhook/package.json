@@ -18,7 +18,7 @@
   "devDependencies": {
     "@octokit/webhooks-definitions": "^3.67.3",
     "@trivago/prettier-plugin-sort-imports": "^4.2.1",
-    "@types/aws-lambda": "^8.10.134",
+    "@types/aws-lambda": "^8.10.137",
     "@types/express": "^4.17.21",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.8.9",
@@ -38,7 +38,7 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@aws-sdk/client-sqs": "^3.540.0",
+    "@aws-sdk/client-sqs": "^3.554.0",
     "@middy/core": "^4.7.0",
     "@octokit/rest": "^20.0.1",
     "@octokit/types": "^12.5.0",
